@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="24" viewBox="0 0 1200 24">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#ffd700" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#ffd700"/>
+      <stop offset="1" stop-color="#ffd700" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="n" x="-5%" y="-300%" width="110%" height="700%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect x="0" y="11" width="1200" height="1" fill="#ffd700" opacity=".18"/>
+  <rect x="-400" y="10" width="400" height="3" rx="1.5" fill="url(#g)" filter="url(#n)">
+    <animate attributeName="x" values="-400;1200" dur="3.5s" repeatCount="indefinite"/>
+  </rect>
+  <circle cx="600" cy="12" r="4" fill="#ffd700" filter="url(#n)">
+    <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite"/>
+  </circle>
+</svg>

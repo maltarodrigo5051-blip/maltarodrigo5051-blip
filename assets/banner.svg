@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#b8860b"/>
+      <stop offset="0.35" stop-color="#ffd700"/>
+      <stop offset="0.5" stop-color="#fff4c2"/>
+      <stop offset="0.65" stop-color="#ffd700"/>
+      <stop offset="1" stop-color="#b8860b"/>
+      <animateTransform attributeName="gradientTransform" type="translate" values="-1 0;1 0" dur="6s" repeatCount="indefinite"/>
+    </linearGradient>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b0b0b"/>
+      <stop offset="1" stop-color="#000"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.5" cy="0.45" r="0.6">
+      <stop offset="0" stop-color="#ffd700" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#ffd700" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="neon" x="-20%" y="-50%" width="140%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b1"/>
+      <feGaussianBlur stdDeviation="14" result="b2"/>
+      <feMerge><feMergeNode in="b2"/><feMergeNode in="b1"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffd700" stroke-opacity="0.06"/>
+    </pattern>
+    <clipPath id="type"><rect x="0" y="0" height="340" width="0">
+      <animate attributeName="width" values="0;1200;1200;0" keyTimes="0;0.45;0.85;1" dur="7s" repeatCount="indefinite"/>
+    </rect></clipPath>
+    <style>
+      .t{font-family:'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif}
+      .flicker{animation:fl 5s infinite}
+      @keyframes fl{0%,18%,22%,25%,53%,57%,100%{opacity:1}20%,24%,55%{opacity:.35}}
+      .pulse{animation:pu 3s ease-in-out infinite}
+      @keyframes pu{0%,100%{opacity:.55}50%{opacity:1}}
+    </style>
+  </defs>
+
+  <rect width="1200" height="340" fill="url(#bg)"/>
+  <rect width="1200" height="340" fill="url(#grid)"/>
+  <rect width="1200" height="340" fill="url(#halo)"/>
+
+  <!-- marco de neón -->
+  <rect x="14" y="14" width="1172" height="312" rx="18" fill="none" stroke="#ffd700" stroke-width="2" filter="url(#neon)" class="pulse"/>
+
+  <!-- línea que escanea -->
+  <rect x="0" y="0" width="1200" height="2" fill="#ffd700" opacity="0.5">
+    <animate attributeName="y" values="20;320;20" dur="6s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- partículas -->
+  <g fill="#ffd700">
+    <circle cx="120" cy="80" r="2"><animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/></circle>
+    <circle cx="1060" cy="70" r="2"><animate attributeName="opacity" values="0;1;0" dur="4s" begin="1s" repeatCount="indefinite"/></circle>
+    <circle cx="980" cy="270" r="2"><animate attributeName="opacity" values="0;1;0" dur="3.5s" begin=".5s" repeatCount="indefinite"/></circle>
+    <circle cx="200" cy="260" r="2"><animate attributeName="opacity" values="0;1;0" dur="4.5s" begin="2s" repeatCount="indefinite"/></circle>
+  </g>
+
+  <text x="600" y="78" text-anchor="middle" class="t" font-size="18" letter-spacing="8" fill="#ffd700" opacity=".75">HOLA, SOY</text>
+
+  <g class="flicker" filter="url(#neon)">
+    <text x="600" y="168" text-anchor="middle" class="t" font-size="76" font-weight="800" letter-spacing="2" fill="url(#gold)">RODRIGO POVEDA</text>
+  </g>
+
+  <g clip-path="url(#type)">
+    <text x="600" y="228" text-anchor="middle" class="t" font-size="28" font-weight="600" fill="#f5f5f5">Desarrollador Full Stack · Python · JavaScript · Java</text>
+  </g>
+
+  <text x="600" y="282" text-anchor="middle" class="t" font-size="18" fill="#bfbfbf" letter-spacing="2">Tiendas en línea · Sistemas de reservas · Apps con IA · Nicaragua</text>
+</svg>
